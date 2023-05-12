@@ -3,6 +3,14 @@ from questions import q_list1, q_list2
 from high_score import get_high_score, save_high_score
 
 
+class Character:
+    def __init__(self, name, character_class, health, attack, defence):
+        self.name = name
+        self.character_class = character_class
+        self.health = health
+        self.attack = attack
+        self.defence = defence
+
 class Question:
     def __init__(self, question, answer):
         self.question = question
@@ -53,8 +61,29 @@ for q in q_list2:
 def new_game():
     high_score = get_high_score
     current_score = 0
+    
+    class_choice = input("Please select a Class: 1.Warrior, 2.Mage, 3.Ranger")
+    if class_choice == "1":
+        character_class = "Warrior"
+        health = 100
+        attack = 20
+        defence = 10
+    elif class_choice == "2":
+        character_class = "Mage"
+        health = 100
+        attack = 10
+        defence = 5
+    elif class_choice == "3":
+        character_class = "Ranger"
+        health = 100
+        attack = 15
+        defence = 7
+    else:
+        print("Invalid choice, defaulting to warrior.")
+        character_class = "Warrior"
     user = input("Please enter your name: ")
-    print("Welcome", user)
+    print("Welcome", user, "the", character_class)
+    player = Character(user, character_class, health, attack, defence)
     print("          |------------Welcome to Trivia------------|          ")
     print(" *********|1. Movies            |2. Music           |********* ")
     print("          |-----------------------------------------|")
