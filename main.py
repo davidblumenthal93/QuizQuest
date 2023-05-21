@@ -1,7 +1,12 @@
-from quiz_game import *
+#from quiz_game import Question, Quiz, new_gam
 from high_score import get_high_score, save_high_score
+from characters import Character
+from levels import Level, MusicLevel, MoviesLevel,new_game
+from questions import Question, q_list1, q_list2
 
 #high_score = get_high_score()
+
+
 
 
 def menu_screen():
